@@ -44,51 +44,23 @@ O sistema conta com as seguintes funcionalidades:
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
-
-Este projeto foi construído com uma arquitetura robusta, utilizando as seguintes tecnologias:
-
-* *Backend:* Java 8+, Servlets & JSP
-* *Frontend:* HTML5, CSS3, JavaScript (ES6)
-* *Banco de Dados:* MySQL 8.0
-* *Servidor de Aplicação:* Apache Tomcat
-* *Gerenciamento de Dependências:* Maven
-* *Controle de Versão:* Git & GitHub
-
----
-
-## 🚀 Como Executar o Projeto
-
-Siga os passos abaixo para configurar e executar o projeto em seu ambiente local.
-
-1.  *Clone o repositório:*
-    bash
-    git clone [https://github.com/seu-usuario/nome-do-repositorio.git](https://github.com/seu-usuario/nome-do-repositorio.git)
-    cd nome-do-repositorio
-    
-
-2.  *Configure o Banco de Dados:*
-    * Execute o script database/script.sql no seu servidor MySQL para criar as tabelas necessárias.
-    * Configure as credenciais de acesso ao banco no arquivo src/main/java/seu/pacote/dao/ConnectionFactory.java.
-
-3.  *Execute a Aplicação:*
-    * Importe o projeto em sua IDE (Eclipse, IntelliJ).
-    * Compile e implante a aplicação em um servidor Apache Tomcat.
-    * Acesse http://localhost:8080/nome-do-seu-projeto em seu navegador.
-
----
-
 ## 👥 Equipe Responsável
 
 Este projeto foi desenvolvido de forma colaborativa pelos seguintes alunos:
 
 | Nome Completo        | Função Principal no Projeto          |
 | -------------------- | ------------------------------------ |
-| *[Nome do Aluno 1]* | Gerente de Projeto / Arquiteto Backend |
-| *[Nome do Aluno 2]* | Desenvolvedor Full-Stack (CRUD Produto) |
-| *[Nome do Aluno 3]* | Desenvolvedor Full-Stack (CRUD Categoria) |
-| *[Nome do Aluno 4]* | Desenvolvedor Full-Stack (Movimentação) |
-| *[Nome do Aluno 5]* | Desenvolvedor Full-Stack (Relatórios) / UX/UI |
+| *[Marcus Filipi Lehmkuhl Ventura]* | Desenvolvedor Full-Stack  |
+| *[Flávio da Silva Vargas]* | Desenvolvedor Full-Stack  |
+| *[Felipe Goularte]* | Desenvolvedor Frontend  |
+| *[João Vitor Cardoso de Jesus]* | Desenvolvedor Frontend  |
+| *[Nycolle Viera]* | Desenvolvedor Frontend / Gerente de Projeto  |
+| *[Carolina Pinto]* | Gerente de Projeto  |
+
+
+
+
+
 
 ---
 
