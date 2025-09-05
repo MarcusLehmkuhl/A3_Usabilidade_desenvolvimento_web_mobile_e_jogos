@@ -5,7 +5,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
 
-Projeto acadêmico da Unidade Curricular de *[Nome da Matéria]*, desenvolvido para a Unisul. O sistema consiste em uma aplicação web completa para gerenciamento de estoque, permitindo o controle de produtos, categorias e movimentações (entradas e saídas).
+Projeto acadêmico da Unidade Curricular de *[Usabilidade, desenvolvimento web, mobile e jogos]*, desenvolvido para a Unisul. O sistema consiste em uma aplicação web completa para gerenciamento de estoque, permitindo o controle de produtos, categorias e movimentações (entradas e saídas).
 
 ---
 
