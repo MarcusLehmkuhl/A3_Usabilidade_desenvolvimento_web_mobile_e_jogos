@@ -176,6 +176,7 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **Desenvolvido com ❤️ para A3 - UDW 2025**
 
-[⬆ Voltar ao topo](#-sistema-de-gestão-de-estoque---backend)
+[⬆ Voltar ao topo](backend#-sistema-de-gestão-de-estoque---backend)
 
 </div>
+
