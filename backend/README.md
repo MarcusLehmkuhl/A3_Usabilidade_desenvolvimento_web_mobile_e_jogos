@@ -176,8 +176,9 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **Desenvolvido com ❤️ para A3 - UDW 2025**
 
-[⬆ Voltar ao topo](backend)
+[⬆ Voltar ao topo](https://github.com/MarcusLehmkuhl/A3_Usabilidade_desenvolvimento_web_mobile_e_jogos/tree/main/backend)
 
 </div>
+
 
 
