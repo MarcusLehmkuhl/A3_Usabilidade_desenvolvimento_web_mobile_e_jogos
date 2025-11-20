@@ -12,7 +12,11 @@ public class CategoryDAO {
     
     public List<Category> findAll() {
         List<Category> categories = new ArrayList<>();
-        String sql = "SELECT * FROM categories ORDER BY name";
+        String sql = "SELECT c.*, s.name AS size_name, p.name AS packaging_name " +
+                     "FROM categories c " +
+                     "LEFT JOIN sizes s ON c.size_id = s.id " +
+                     "LEFT JOIN packagings p ON c.packaging_id = p.id " +
+                     "ORDER BY c.name";
         
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement();
@@ -112,6 +116,20 @@ public class CategoryDAO {
         category.setSizeId(rs.getString("size_id"));
         category.setPackagingId(rs.getString("packaging_id"));
         category.setCreatedAt(rs.getTimestamp("created_at"));
+        
+        // Adicionar nomes de tamanho e embalagem se existirem no ResultSet
+        try {
+            category.setSizeName(rs.getString("size_name"));
+        } catch (SQLException e) {
+            // Coluna não existe no ResultSet
+        }
+        
+        try {
+            category.setPackagingName(rs.getString("packaging_name"));
+        } catch (SQLException e) {
+            // Coluna não existe no ResultSet
+        }
+        
         return category;
     }
 }
