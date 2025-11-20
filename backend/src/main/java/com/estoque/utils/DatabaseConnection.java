@@ -15,23 +15,33 @@ public class DatabaseConnection {
 
     static {
         try {
-            // Carregar configurações do arquivo properties
-            Properties props = new Properties();
-            InputStream input = DatabaseConnection.class.getClassLoader()
-                    .getResourceAsStream("database.properties");
+            String dbUrl = System.getenv("DB_URL");
+            String dbUsername = System.getenv("DB_USERNAME");
+            String dbPassword = System.getenv("DB_PASSWORD");
             
-            if (input != null) {
-                props.load(input);
-                URL = props.getProperty("db.url");
-                USERNAME = props.getProperty("db.username");
-                PASSWORD = props.getProperty("db.password");
-                DRIVER = props.getProperty("db.driver");
-                
-                // Carregar o driver JDBC
-                Class.forName(DRIVER);
+            if (dbUrl != null && dbUsername != null && dbPassword != null) {
+                URL = dbUrl;
+                USERNAME = dbUsername;
+                PASSWORD = dbPassword;
+                DRIVER = "com.mysql.cj.jdbc.Driver";
             } else {
-                throw new IOException("Arquivo database.properties não encontrado");
+                Properties props = new Properties();
+                InputStream input = DatabaseConnection.class.getClassLoader()
+                        .getResourceAsStream("database.properties");
+                
+                if (input != null) {
+                    props.load(input);
+                    URL = props.getProperty("db.url");
+                    USERNAME = props.getProperty("db.username");
+                    PASSWORD = props.getProperty("db.password");
+                    DRIVER = props.getProperty("db.driver");
+                } else {
+                    throw new IOException("Arquivo database.properties não encontrado");
+                }
             }
+            
+            Class.forName(DRIVER);
+            System.out.println("✓ Banco de dados configurado: " + URL);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
             throw new RuntimeException("Erro ao carregar configurações do banco de dados", e);
