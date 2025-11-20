@@ -101,28 +101,3 @@ CREATE INDEX idx_audit_logs_entity ON audit_logs(entity_type, entity_id);
 CREATE INDEX idx_audit_logs_date ON audit_logs(created_at);
 CREATE INDEX idx_alerts_product ON alerts(product_id);
 CREATE INDEX idx_alerts_read ON alerts(is_read);
-
--- Dados de exemplo (opcional)
--- Senha: senha123 (hash BCrypt)
-INSERT INTO users (id, email, password, name) VALUES 
-('1', 'admin@example.com', '$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy', 'Admin');
-
-INSERT INTO sizes (id, name) VALUES
-('1', 'Pequeno'),
-('2', 'Médio'),
-('3', 'Grande');
-
-INSERT INTO packagings (id, name) VALUES
-('1', 'Caixa'),
-('2', 'Saco'),
-('3', 'Unidade');
-
-INSERT INTO categories (id, name, description, size_id, packaging_id) VALUES
-('1', 'Eletrônicos', 'Produtos eletrônicos', '2', '1'),
-('2', 'Alimentos', 'Produtos alimentícios', '2', '2'),
-('3', 'Bebidas', 'Bebidas em geral', '3', '3');
-
-INSERT INTO products (id, name, description, price, stock, min_stock, category_id, size_id, packaging_id) VALUES
-('1', 'Notebook Dell', 'Notebook Dell Inspiron 15', 3500.00, 10, 3, '1', '2', '1'),
-('2', 'Arroz 5kg', 'Arroz branco tipo 1', 25.90, 50, 10, '2', '3', '2'),
-('3', 'Coca-Cola 2L', 'Refrigerante Coca-Cola 2 litros', 8.50, 100, 20, '3', '3', '3');
