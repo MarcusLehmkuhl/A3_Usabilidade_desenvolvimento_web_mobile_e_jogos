@@ -18,16 +18,27 @@ public class JWTUtil {
 
     static {
         try {
-            Properties props = new Properties();
-            InputStream input = JWTUtil.class.getClassLoader()
-                    .getResourceAsStream("database.properties");
+            SECRET_KEY = System.getenv("JWT_SECRET");
+            String expirationEnv = System.getenv("JWT_EXPIRATION");
             
-            if (input != null) {
-                props.load(input);
-                SECRET_KEY = props.getProperty("jwt.secret");
-                EXPIRATION_TIME = Long.parseLong(props.getProperty("jwt.expiration"));
-                key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
+            if (SECRET_KEY == null || expirationEnv == null) {
+                Properties props = new Properties();
+                InputStream input = JWTUtil.class.getClassLoader()
+                        .getResourceAsStream("database.properties");
+                
+                if (input != null) {
+                    props.load(input);
+                    if (SECRET_KEY == null) {
+                        SECRET_KEY = props.getProperty("jwt.secret");
+                    }
+                    if (expirationEnv == null) {
+                        expirationEnv = props.getProperty("jwt.expiration");
+                    }
+                }
             }
+            
+            EXPIRATION_TIME = Long.parseLong(expirationEnv != null ? expirationEnv : "86400000");
+            key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
