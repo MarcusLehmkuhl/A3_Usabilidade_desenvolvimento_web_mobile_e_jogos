@@ -5,6 +5,7 @@ import java.sql.Timestamp;
 public class StockMovement {
     private String id;
     private String productId;
+    private String productName;
     private String type; // "entrada" ou "saida"
     private Integer quantity;
     private String reason;
@@ -66,5 +67,13 @@ public class StockMovement {
 
     public void setDate(Timestamp date) {
         this.date = date;
+    }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 }
