@@ -1,1 +1,30 @@
-.nome_module
+# Java
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/
+mvnw
+mvnw.cmd
+
+# Logs
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# Environment
+.env
+database.properties
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
