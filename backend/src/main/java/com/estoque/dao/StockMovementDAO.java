@@ -12,7 +12,9 @@ public class StockMovementDAO {
     
     public List<StockMovement> findAll() {
         List<StockMovement> movements = new ArrayList<>();
-        String sql = "SELECT * FROM stock_movements ORDER BY date DESC";
+        String sql = "SELECT sm.*, p.name AS product_name FROM stock_movements sm " +
+                     "LEFT JOIN products p ON sm.product_id = p.id " +
+                     "ORDER BY sm.date DESC";
         
         try (Connection conn = DatabaseConnection.getConnection();
              Statement stmt = conn.createStatement();
@@ -183,6 +185,13 @@ public class StockMovementDAO {
         movement.setQuantity(rs.getInt("quantity"));
         movement.setReason(rs.getString("reason"));
         movement.setDate(rs.getTimestamp("date"));
+        
+        try {
+            movement.setProductName(rs.getString("product_name"));
+        } catch (SQLException e) {
+            // Coluna product_name pode não existir em todas as queries
+        }
+        
         return movement;
     }
 }
