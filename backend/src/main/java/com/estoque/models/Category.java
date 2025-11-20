@@ -8,6 +8,8 @@ public class Category {
     private String description;
     private String sizeId;
     private String packagingId;
+    private String sizeName;
+    private String packagingName;
     private Timestamp createdAt;
 
     public Category() {}
@@ -65,5 +67,21 @@ public class Category {
 
     public void setCreatedAt(Timestamp createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public String getSizeName() {
+        return sizeName;
+    }
+
+    public void setSizeName(String sizeName) {
+        this.sizeName = sizeName;
+    }
+
+    public String getPackagingName() {
+        return packagingName;
+    }
+
+    public void setPackagingName(String packagingName) {
+        this.packagingName = packagingName;
     }
 }
