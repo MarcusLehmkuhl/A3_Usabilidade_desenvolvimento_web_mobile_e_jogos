@@ -10,6 +10,8 @@ public class Product {
     private BigDecimal price;
     private Integer stock;
     private Integer minStock;
+    private Integer maxStock;
+    private String unit;
     private String categoryId;
     private String sizeId;
     private String packagingId;
@@ -74,6 +76,14 @@ public class Product {
         this.minStock = minStock;
     }
 
+    public Integer getMaxStock() {
+        return maxStock;
+    }
+
+    public void setMaxStock(Integer maxStock) {
+        this.maxStock = maxStock;
+    }
+
     public String getCategoryId() {
         return categoryId;
     }
@@ -112,5 +122,13 @@ public class Product {
 
     public void setUpdatedAt(Timestamp updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }
