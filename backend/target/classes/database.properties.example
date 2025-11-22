@@ -1,0 +1,22 @@
+# Database Configuration
+db.url=jdbc:mysql://localhost:3306/estoque_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+db.username=root
+db.password=sua_senha_aqui
+db.driver=com.mysql.cj.jdbc.Driver
+
+# JWT Configuration
+jwt.secret=sua_chave_jwt_secreta_aqui_minimo_256_bits
+jwt.expiration=604800000
+
+# INSTRUÇÕES:
+# 1. Copie este arquivo para: database.properties
+#    cp database.properties.example database.properties
+#
+# 2. Configure suas credenciais reais no arquivo copiado
+#
+# 3. IMPORTANTE: O arquivo database.properties está no .gitignore
+#    NUNCA commite senhas ou chaves reais!
+#
+# 4. Para produção, use variáveis de ambiente:
+#    export DB_PASSWORD="senha_segura"
+#    export JWT_SECRET="chave_super_secreta_512_bits"
