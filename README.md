@@ -54,8 +54,8 @@ Este projeto foi desenvolvido de forma colaborativa pelos seguintes alunos:
 | *[Flávio da Silva Vargas]* | Desenvolvedor Full-Stack  |
 | *[Felipe Goularte]* | Desenvolvedor Frontend  |
 | *[João Vitor Cardoso de Jesus]* | Desenvolvedor Frontend  |
-| *[Nycolle Viera]* | Desenvolvedor Frontend |
-| *[Carolina Pinto]* | Desenvolvedor Frontend / Gerente de Projeto  |
+| *[Nycolle Viera]* | Desenvolvedor Frontend / Gerente de Projeto |
+| *[Carolina Pinto]* | Desenvolvedor Frontend  |
 
 
 
