@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Movimentação de Estoque</title>
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body data-page="movimentacao">
+  <div class="app-shell">
+    <header class="navbar">
+      <div class="navbar-inner">
+        <nav class="nav-links">
+          <a href="produtos.html" class="nav-link" data-page="produtos">Produtos</a>
+          <a href="categorias.html" class="nav-link" data-page="categorias">Categorias</a>
+          <a href="movimentacao.html" class="nav-link" data-page="estoque">Estoque</a>
+    
+          <a href="relatorios.html" class="nav-link" data-page="relatorios">Relatórios</a>
+        </nav>
+        <button class="logout-btn">Sair</button>
+      </div>
+    </header>
+
+    <main class="page page-stock">
+      <div class="page-inner">
+        <header class="page-header">
+          <h1 class="page-title">Movimentação de Estoque</h1>
+          <p class="page-subtitle">Registre entradas e saídas de produtos</p>
+        </header>
+
+        <div style="display: flex; gap: 24px; align-items: flex-start;">
+          <section class="card" style="flex: 1;">
+            <h2 class="card-title">Registrar Movimentação</h2>
+            <p class="card-subtitle">Preencha os campos para registrar a movimentação.</p>
+
+            <form id="form-mov" class="modal-body" style="margin-top: 12px;">
+              <div class="form-field">
+                <label class="form-label">Produto *</label>
+                <select class="select" id="mov-produto" name="produto" required>
+                  <option value="">Selecione o produto</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label">Tipo de Movimentação *</label>
+                <select class="select" name="tipo">
+                  <option>Entrada</option>
+                  <option>Saída</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label">Quantidade *</label>
+                <input class="input" type="number" name="quantidade" placeholder="0" required>
+              </div>
+
+              <div class="form-field">
+                <label class="form-label">Data da Movimentação *</label>
+                <input class="input" type="date" name="data">
+              </div>
+
+              <button class="btn btn-primary" style="margin-top: 12px; width: 100%;">Registrar Movimentação</button>
+            </form>
+          </section>
+
+          <section class="card" style="flex: 1;">
+            <h2 class="card-title">Histórico de Movimentações</h2>
+            <p class="card-subtitle">Últimos registros realizados.</p>
+
+            <div class="table-wrapper" style="margin-top: 12px;">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Produto</th>
+                    <th>Data</th>
+                    <th>Tipo</th>
+                    <th>Quantidade</th>
+                  </tr>
+                </thead>
+                <tbody id="mov-tbody">
+                  <tr>
+                    <td colspan="4" class="table-empty">Nenhuma movimentação registrada</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

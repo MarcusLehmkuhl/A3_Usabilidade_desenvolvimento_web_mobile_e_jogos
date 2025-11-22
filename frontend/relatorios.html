@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Relatórios Gerenciais</title>
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body data-page="relatorios">
+  <div class="app-shell">
+    <header class="navbar">
+      <div class="navbar-inner">
+        <nav class="nav-links">
+          <a href="produtos.html" class="nav-link" data-page="produtos">Produtos</a>
+          <a href="categorias.html" class="nav-link" data-page="categorias">Categorias</a>
+          <a href="movimentacao.html" class="nav-link" data-page="estoque">Estoque</a>
+          
+          <a href="relatorios.html" class="nav-link" data-page="relatorios">Relatórios</a>
+        </nav>
+        <button class="logout-btn">Sair</button>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="page-inner">
+        <header class="page-header">
+          <h1 class="page-title">Relatórios Gerenciais</h1>
+          <p class="page-subtitle">Visualize informações estratégicas sobre seus produtos</p>
+        </header>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="lista">Lista de Preços</button>
+          <button class="tab" data-tab="balanco">Balanço</button>
+          <button class="tab" data-tab="minimo">Abaixo do Mínimo</button>
+          <button class="tab" data-tab="categoria">Por Categoria</button>
+          <button class="tab" data-tab="movimentacoes">Movimentações</button>
+        </div>
+
+        <!-- Lista de Preços -->
+        <section class="card report-section active" data-section="lista">
+          <h2 class="card-title">Lista de Preços</h2>
+          <p class="card-subtitle">Produtos ordenados alfabeticamente com seus preços e categorias</p>
+
+          <div class="table-wrapper" style="margin-top: 14px;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nome do Produto</th>
+                  <th>Preço</th>
+                  <th>Unidade</th>
+                  <th>Categoria</th>
+                </tr>
+              </thead>
+              <tbody id="lista-precos-tbody">
+                <tr>
+                  <td colspan="4" class="table-empty">Nenhum produto cadastrado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Balanço -->
+        <section class="card report-section" data-section="balanco">
+          <h2 class="card-title">Balanço Físico/Financeiro</h2>
+          <p class="card-subtitle">Quantidade e valor financeiro de cada produto em estoque</p>
+
+          <div class="summary-card">
+            <div class="summary-title">Valor Total do Estoque</div>
+            <div class="summary-value" id="balanco-total">R$ 0,00</div>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nome do Produto</th>
+                  <th>Quantidade</th>
+                  <th>Preço Unit.</th>
+                  <th>Valor Total</th>
+                </tr>
+              </thead>
+              <tbody id="balanco-tbody">
+                <tr>
+                  <td colspan="4" class="table-empty">Nenhum produto cadastrado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Abaixo do mínimo -->
+        <section class="card report-section" data-section="minimo">
+          <h2 class="card-title">Produtos Abaixo da Mínima</h2>
+          <p class="card-subtitle">Produtos que precisam de reposição urgente de estoque</p>
+
+          <div class="table-wrapper" style="margin-top: 14px;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nome do Produto</th>
+                  <th>Qtd. Mínima</th>
+                  <th>Qtd. em Estoque</th>
+                  <th>Diferença</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="minimo-tbody">
+                <tr>
+                  <td colspan="5" class="table-empty">Todos os produtos estão com estoque adequado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Por categoria -->
+        <section class="card report-section" data-section="categoria">
+          <h2 class="card-title">Produtos por Categoria</h2>
+          <p class="card-subtitle">Quantidade de produtos distintos em cada categoria</p>
+
+          <div class="table-wrapper" style="margin-top: 14px;">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nome da Categoria</th>
+                  <th>Quantidade de Produtos</th>
+                  <th>Percentual</th>
+                </tr>
+              </thead>
+              <tbody id="categoria-tbody">
+                <tr>
+                  <td colspan="3" class="table-empty">Nenhuma categoria cadastrada</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Movimentações -->
+        <section class="card report-section" data-section="movimentacoes">
+          <h2 class="card-title">Maiores Movimentações</h2>
+          <p class="card-subtitle">Produtos com maior entrada e saída de estoque</p>
+
+          <div id="rel-mov-container" style="margin-top: 18px; font-size: 14px; color: var(--text-muted);">
+            Nenhuma movimentação registrada ainda
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
