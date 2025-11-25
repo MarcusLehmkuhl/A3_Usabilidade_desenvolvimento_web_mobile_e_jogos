@@ -9,7 +9,7 @@ public class Alert {
     private String severity;
     private String message;
     private boolean isRead;
-   
+    private Timestamp createdAt;
     
     // Product details (joined from products table)
     private String productName;
@@ -72,6 +72,9 @@ public class Alert {
         return isRead;
     }
     
+    public void setRead(boolean read) {
+        isRead = read;
+    }
     
     public Timestamp getCreatedAt() {
         return createdAt;
