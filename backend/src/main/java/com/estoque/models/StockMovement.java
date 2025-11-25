@@ -3,77 +3,69 @@ package com.estoque.models;
 import java.sql.Timestamp;
 
 public class StockMovement {
-    private String id;
-    private String productId;
-    private String productName;
-    private String type; // "entrada" ou "saida"
-    private Integer quantity;
-    private String reason;
-    private Timestamp date;
+    // ... (variáveis existentes)
 
-    public StockMovement() {}
+    // Novas variáveis
+    private String userId; // Identificador do usuário que realizou a movimentação
+    private String supplierId; // Identificador do fornecedor (para entradas)
+    private String customerId; // Identificador do cliente (para saídas)
+    private Double costPrice; // Preço de custo unitário
+    private Double sellingPrice; // Preço de venda unitário
 
-    public StockMovement(String id, String productId, String type, Integer quantity) {
-        this.id = id;
-        this.productId = productId;
-        this.type = type;
-        this.quantity = quantity;
+    // ... (construtores existentes)
+
+    // Construtor completo
+    public StockMovement(String id, String productId, String type, Integer quantity, 
+                         String userId, String supplierId, String customerId, 
+                         Double costPrice, Double sellingPrice) {
+        // ... (inicialização das variáveis existentes)
+        this.userId = userId;
+        this.supplierId = supplierId;
+        this.customerId = customerId;
+        this.costPrice = costPrice;
+        this.sellingPrice = sellingPrice;
     }
 
-    // Getters and Setters
-    public String getId() {
-        return id;
+    // ... (getters e setters existentes)
+
+    // Getters e Setters para as novas variáveis
+    public String getUserId() {
+        return userId;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public String getProductId() {
-        return productId;
+    public String getSupplierId() {
+        return supplierId;
     }
 
-    public void setProductId(String productId) {
-        this.productId = productId;
+    public void setSupplierId(String supplierId) {
+        this.supplierId = supplierId;
     }
 
-    public String getType() {
-        return type;
+    public String getCustomerId() {
+        return customerId;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setCustomerId(String customerId) {
+        this.customerId = customerId;
     }
 
-    public Integer getQuantity() {
-        return quantity;
+    public Double getCostPrice() {
+        return costPrice;
     }
 
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
+    public void setCostPrice(Double costPrice) {
+        this.costPrice = costPrice;
     }
 
-    public String getReason() {
-        return reason;
+    public Double getSellingPrice() {
+        return sellingPrice;
     }
 
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
-
-    public String getProductName() {
-        return productName;
-    }
-
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setSellingPrice(Double sellingPrice) {
+        this.sellingPrice = sellingPrice;
     }
 }
