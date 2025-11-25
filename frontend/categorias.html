@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gerenciamento de Categorias</title>
+  <link rel="stylesheet" href="css/global.css">
+</head>
+<body data-page="categorias">
+  <div class="app-shell">
+    <header class="navbar">
+      <div class="navbar-inner">
+        <nav class="nav-links">
+          <a href="produtos.html" class="nav-link" data-page="produtos">Produtos</a>
+          <a href="categorias.html" class="nav-link" data-page="categorias">Categorias</a>
+          <a href="movimentacao.html" class="nav-link" data-page="estoque">Estoque</a>
+                  <a href="relatorios.html" class="nav-link" data-page="relatorios">Relatórios</a>
+        </nav>
+        <button class="logout-btn">Sair</button>
+      </div>
+    </header>
+
+    <main class="page">
+      <div class="page-inner">
+        <header class="page-header">
+          <h1 class="page-title">Gerenciamento de Categorias</h1>
+          <p class="page-subtitle">Adicione, edite e gerencie suas categorias</p>
+        </header>
+
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <h2 class="card-title">Categorias</h2>
+              <p class="card-subtitle"><span id="categorias-count">0 categoria(s) encontrada(s)</span></p>
+            </div>
+            <div class="input-group">
+              <input class="input" type="text" placeholder="Buscar categorias..." style="width: 220px;" disabled>
+              <button class="btn btn-primary" data-open-modal="categoria">+ Nova Categoria</button>
+            </div>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Nome</th>
+                  <th>Descrição</th>
+                  <th>Tamanho</th>
+                  <th>Embalagem</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody id="categorias-tbody">
+                <tr>
+                  <td colspan="5" class="table-empty">Nenhuma categoria encontrada</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL NOVA CATEGORIA -->
+  <div class="modal-backdrop" data-modal="categoria">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Nova Categoria</h2>
+          <p class="modal-subtitle">Preencha os dados para criar uma nova categoria.</p>
+        </div>
+        <button class="modal-close" data-close-modal>&times;</button>
+      </div>
+
+      <form id="form-categoria">
+        <div class="modal-body">
+          <div class="form-field">
+            <label class="form-label">Nome</label>
+            <input class="input" name="nome" placeholder="Nome da categoria" required>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label">Descrição (opcional)</label>
+            <textarea class="input" name="descricao" rows="3" placeholder="Descrição da categoria"></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label class="form-label">Tamanho</label>
+              <div class="input-group">
+                <select class="select" id="categoria-tamanho" name="tamanho">
+                  <option value="">Selecione o tamanho</option>
+                </select>
+                <button type="button" class="btn btn-outline" data-open-modal="tamanhos">Gerenciar Tamanhos</button>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label class="form-label">Embalagem</label>
+              <div class="input-group">
+                <select class="select" id="categoria-embalagem" name="embalagem">
+                  <option value="">Selecione a embalagem</option>
+                </select>
+                <button type="button" class="btn btn-outline" data-open-modal="embalagens">Gerenciar Embalagens</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-footer">
+          <button type="button" class="btn btn-outline" data-close-modal>Cancelar</button>
+          <button type="submit" class="btn btn-primary">Criar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL GERENCIAR TAMANHOS -->
+  <div class="modal-backdrop" data-modal="tamanhos">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Gerenciar Tamanhos</h2>
+          <p class="modal-subtitle">Adicione, edite ou exclua tamanhos disponíveis</p>
+        </div>
+        <button class="modal-close" data-close-modal>&times;</button>
+      </div>
+
+      <form id="form-tamanho">
+        <div class="modal-body">
+          <div class="form-row">
+            <input class="input" name="tamanho-nome" placeholder="Nome do tamanho">
+            <button class="btn btn-primary" type="submit">+</button>
+          </div>
+
+          <div class="table-wrapper" style="margin-top: 16px;">
+            <table class="table">
+              <thead>
+                <tr><th>Nome</th><th>Ações</th></tr>
+              </thead>
+              <tbody id="tamanhos-tbody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL GERENCIAR EMBALAGENS -->
+  <div class="modal-backdrop" data-modal="embalagens">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title">Gerenciar Embalagens</h2>
+          <p class="modal-subtitle">Adicione, edite ou exclua embalagens disponíveis</p>
+        </div>
+        <button class="modal-close" data-close-modal>&times;</button>
+      </div>
+
+      <form id="form-embalagem">
+        <div class="modal-body">
+          <div class="form-row">
+            <input class="input" name="embalagem-nome" placeholder="Nome da embalagem">
+            <button class="btn btn-primary" type="submit">+</button>
+          </div>
+
+          <div class="table-wrapper" style="margin-top: 16px; max-height: 260px; overflow-y: auto;">
+            <table class="table">
+              <thead>
+                <tr><th>Nome</th><th>Ações</th></tr>
+              </thead>
+              <tbody id="embalagens-tbody">
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
