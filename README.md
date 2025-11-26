@@ -1,6 +1,6 @@
 # 📦 Sistema de Controle de Estoque Web
 
-![Badge de Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)
+![Badge de Status Concluído](https://img.shields.io/badge/status-concluído-green)
 ![Badge de Licença](https://img.shields.io/badge/license-MIT-blue)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)
