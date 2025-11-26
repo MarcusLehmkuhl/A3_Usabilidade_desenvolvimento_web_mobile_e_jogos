@@ -2,6 +2,7 @@
 
 > API REST completa para gestão de estoque com autenticação JWT, alertas automáticos e sistema de auditoria.
 
+![Badge de Status Concluído](https://img.shields.io/badge/status-concluído-green)
 [![Java](https://img.shields.io/badge/Java-11-orange)](https://www.oracle.com/java/)
 [![Maven](https://img.shields.io/badge/Maven-3.8-red)](https://maven.apache.org/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-blue)](https://www.mysql.com/)
@@ -160,8 +161,7 @@ Este é um projeto acadêmico (A3 - Usabilidade desenvolvimento web mobile e jog
 
 **Equipe:**
 - **Backend:** Flavio da Silva Vargas, Marcus Filipi Lehmkuhl Ventura
-- **Frontend:** Felipe Goularte, João Vitor Cardoso de Jesus, Nycolle Viera
-- **Gerente de Projeto:** Carolina Pinto
+- **Frontend:** Felipe Goularte, João Vitor Cardoso de Jesus, Nycolle Viera, Carolina Pinto
 
 ---
 
@@ -176,9 +176,8 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 
 **Desenvolvido com ❤️ para A3 - UDW 2025**
 
-[⬆ Voltar ao topo](https://github.com/MarcusLehmkuhl/A3_Usabilidade_desenvolvimento_web_mobile_e_jogos/tree/main/backend)
-
 </div>
+
 
 
 
